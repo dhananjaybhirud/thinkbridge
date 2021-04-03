@@ -8,7 +8,7 @@
       <li>
         <a href="" data-tip="Quick View"><i class="fa fa-search"></i></a>
       </li>
-      <li>
+      <!-- <li>
         <a href="" data-tip="Add to Wishlist"
           ><i class="fa fa-shopping-bag"></i
         ></a>
@@ -16,6 +16,16 @@
       <li>
         <a href="" data-tip="Add to Cart"
           ><i class="fa fa-shopping-cart"></i
+        ></a>
+      </li> -->
+      <li>
+        <a href="" data-tip="Edit"
+          ><i class="fa fa-pencil" aria-hidden="true"></i
+        ></a>
+      </li>
+      <li>
+        <a href="" data-tip="Delete"
+          ><i class="fa fa-trash" aria-hidden="true"></i
         ></a>
       </li>
     </ul>
@@ -31,7 +41,7 @@
   </ul>
   <div class="product-content">
     <h3 class="title">
-      <a href="#">{{ item.title }}</a>
+      <a href="#">{{ item.title | slice: 0:60 }}</a>
     </h3>
     <div class="price">
       {{ item.price | currency: "INR" }}

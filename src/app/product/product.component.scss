@@ -148,7 +148,7 @@ h3.h3 {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -27px;
+  bottom: -30px;
   z-index: 1;
   transition: all 0.3s;
 }
@@ -162,6 +162,7 @@ h3.h3 {
   text-transform: capitalize;
   margin: 0 0 10px;
   transition: all 0.3s ease 0s;
+  padding: 0 5px;
 }
 .product-grid .title a {
   color: #828282;
