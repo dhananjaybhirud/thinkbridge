@@ -1,8 +1,97 @@
 <div class="container">
-  <h3 class="h3">ShopBridge(Sample ui copied from internet)</h3>
+  <h3 class="h3 mb-5">
+    ShopBridge(Sample ui copied from internet)
+
+    <button
+      type="button"
+      class="btn btn-sm btn-primary float-right"
+      (click)="open(add)"
+    >
+      Add Product
+    </button>
+  </h3>
   <div class="row">
     <div class="col-md-3 col-sm-6 mb-5" *ngFor="let i of products">
       <app-product [item]="i"></app-product>
     </div>
   </div>
 </div>
+
+<ng-template #add let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add Product</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="product.title"
+          placeholder="title"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="des">Description</label>
+        <textarea
+          class="form-control"
+          [(ngModel)]="product.description"
+          placeholder=""
+          name="des"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input
+          type="number"
+          class="form-control"
+          [(ngModel)]="product.price"
+          placeholder="price"
+          name="price"
+        />
+      </div>
+      <div class="form-group">
+        <label for="cat">Category</label>
+        <input
+          type="number"
+          class="form-control"
+          [(ngModel)]="product.category"
+          placeholder="cat"
+          name="cat"
+        />
+      </div>
+      <div class="form-group">
+        <label for="img">Image</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="product.image"
+          placeholder="dummy"
+          name="img"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="addProduct()">
+      Save
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Close
+    </button>
+  </div>
+</ng-template>
