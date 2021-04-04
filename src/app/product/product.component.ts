@@ -71,17 +71,20 @@ export class ProductComponent implements OnInit {
   }
 
   deleteItem(id) {
-    this.productService.deleteProduct(id).subscribe(
-      (data) => {
-        console.log(data);
-        this.success = true;
-        // fetch latest data
-        this.modalService.dismissAll();
-      },
-      (error) => {
-        // this.error = error;
-        // this.loading = false;
-      }
-    );
+    if (confirm('Are yu sure to delete ?')) {
+      this.productService.deleteProduct(id).subscribe(
+        (data) => {
+          console.log(data);
+          alert('product deleted');
+          this.success = true;
+          // fetch latest data
+          this.modalService.dismissAll();
+        },
+        (error) => {
+          // this.error = error;
+          // this.loading = false;
+        }
+      );
+    }
   }
 }

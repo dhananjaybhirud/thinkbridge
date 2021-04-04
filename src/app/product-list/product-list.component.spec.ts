@@ -1,4 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductComponent } from '../product/product.component';
+import { ProductsService } from '../services/products.service';
 
 import { ProductListComponent } from './product-list.component';
 
@@ -8,9 +12,10 @@ describe('ProductListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductListComponent ]
-    })
-    .compileComponents();
+      imports: [NgbModalModule, HttpClientModule],
+      declarations: [ProductListComponent, ProductComponent],
+      providers: [ProductsService],
+    }).compileComponents();
   });
 
   beforeEach(() => {

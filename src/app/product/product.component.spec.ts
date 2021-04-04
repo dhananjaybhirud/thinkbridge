@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductsService } from '../services/products.service';
 
 import { ProductComponent } from './product.component';
 
@@ -8,9 +11,10 @@ describe('ProductComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductComponent ]
-    })
-    .compileComponents();
+      imports: [ReactiveFormsModule, FormsModule, NgbModalModule],
+      declarations: [ProductComponent],
+      providers: [ProductsService],
+    }).compileComponents();
   });
 
   beforeEach(() => {
